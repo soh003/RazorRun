@@ -1,4 +1,34 @@
 ﻿@page
+@using RunLib.model;
+@using RunLib.repository;
 @model RazorRun.Pages.Members.IndexModel
 @{
+    ViewData["Title"] = "Members";
 }
+
+<h1 class="Jumbotron">Members</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Team</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Member m in Model.Members)
+        {
+            <tr>
+                <td>@m.Id</td>
+                <td>@m.Name</td>
+                <td>@m.Mobile</td>
+                <td>@m.Team</td>
+                <td>@m.Price</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
